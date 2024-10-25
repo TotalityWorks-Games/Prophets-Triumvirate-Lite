@@ -2,7 +2,7 @@ import { TiledResource } from '@excaliburjs/plugin-tiled';
 import { ImageSource, ImageFiltering, Sound, Resource } from 'excalibur';
 
 // import map
-import ironclawPortMapPath from '../../../Resources/TMX/IronClawPort.tmx?url';
+import ironclawPortMapPath from '../../../Resources/TMX/IronclawPort.tmx?url';
 
 // import music
 import harborMP3 from '../../../Resources/Sounds/Music/Harbor 1 - Treasure Island (Loopable).mp3';

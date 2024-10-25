@@ -37,7 +37,7 @@ class IronClawPort extends Scene {
     // add player character
     /* Default Player Location: pos: vec(2300, 2550), */
     const player = new MainGuy(
-      vec(gridCells(71), gridCells(79)),
+      vec(gridCells(16), gridCells(17)),
       IronclawPortResources
     );
     engine.currentScene.add(player);
