@@ -71,7 +71,7 @@ export class MainGuy extends Actor {
       this.playerMovement(engine);
     }
     this.playerInteract(engine);
-    this.openMenu(engine);
+    this.pauseGame(engine);
   }
 
   onPreCollisionResolve(
@@ -353,16 +353,14 @@ export class MainGuy extends Actor {
     this.graphics.add('down-run', downRun);
   }
 
-  openMenu(engine: Engine) {
+  pauseGame(engine: Engine) {
     if (engine.input.keyboard.wasPressed(Keys.Enter)) {
       if (this.playerState === SCENE_STATE.MENU) {
         this.playerState = SCENE_STATE.PLAYING;
         uiManager.update_state(SCENE_STATE.PLAYING);
-        // uiManager.closeMenu();
       } else {
         this.playerState = SCENE_STATE.MENU;
         uiManager.update_state(SCENE_STATE.MENU);
-        // uiManager.openMenu();
       }
     }
   }
