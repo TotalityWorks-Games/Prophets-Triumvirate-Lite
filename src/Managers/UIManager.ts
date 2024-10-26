@@ -14,10 +14,12 @@ class UIManager {
   game_container!: HTMLElement;
   dialog_container!: HTMLElement;
   pause_menu!: HTMLElement;
+  menu_window!: HTMLElement;
   characterToDialogueWith: string | undefined;
   talkingSound: Sound | undefined;
   menu_items_container!: HTMLElement;
   current_menu_item = -1;
+  menu_opened = false;
   menu_items = [
     // {
     //   name: TEXT_IN_GAME.MENU_COLLECTABLES,
@@ -58,8 +60,8 @@ class UIManager {
     this.menu_items_container = document.getElementById(
       'menu_items_container'
     )!;
+    this.menu_window = document.getElementById('menu_window')!;
 
-    // this.menu_window = document.getElementById('menu_window');
     // this.menu_icon = document.getElementById('menu_icon');
     // this.menu_close_btn = document.querySelectorAll('.menu_close');
   }
@@ -70,7 +72,6 @@ class UIManager {
       <div id="menu_ingame" class="menu">
           <div class="menu_header">
             <p>Menu</p>
-            <div class="menu_close">▲</div>
           </div>
           <ul id="menu_items_container"></ul>
         </div>
@@ -97,6 +98,54 @@ class UIManager {
         `;
   }
 
+  close_submenu() {
+    this.menu_window.style.display = 'none';
+    this.menu_opened = false;
+    this.current_menu_item = -1;
+  }
+
+  close_menu() {
+    this.close_submenu();
+    this.update_state(SCENE_STATE.PLAYING);
+    this.current_menu_item = -1;
+  }
+
+  cancel_menu() {
+    if (this.menu_opened) {
+      this.close_submenu();
+    } else {
+      this.close_menu();
+    }
+    this.update_menu();
+  }
+
+  open_submenu() {
+    const current = this.menu_items[this.current_menu_item];
+    if (current.value === MENU.EXIT) {
+      this.cancel_menu();
+      return;
+    } else if (current.value === MENU.BACK_MAIN_MENU) {
+      this.current_menu_item = 0;
+      this.cancel_menu();
+      // gameManager.go_to(MAPS.MAIN_MENU);
+      return;
+    }
+
+    this.menu_window.classList.value = current.value;
+    const menu_header = this.menu_window.querySelector(
+      '.menu_header'
+    )! as HTMLElement;
+    menu_header.innerText = current.name;
+    const closeDiv = document.createElement('div');
+    closeDiv.innerText = 'x';
+    closeDiv.classList.add('menu_close');
+    closeDiv.onclick = () => this.cancel_menu();
+
+    menu_header.appendChild(closeDiv);
+    this.menu_window.style.display = 'block';
+    this.menu_opened = true;
+  }
+
   update_menu() {
     this.menu_items_container.innerHTML = '';
     this.menu_items.forEach((item, i) => {
@@ -113,7 +162,7 @@ class UIManager {
       btn.onclick = () => {
         this.current_menu_item = Number(btn.name);
         this.update_menu();
-        // this.open_submenu();
+        this.open_submenu();
       };
 
       this.menu_items_container.appendChild(btn);

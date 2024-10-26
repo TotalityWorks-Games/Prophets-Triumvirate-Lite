@@ -278,9 +278,9 @@ body {
               color: var(--color-dark-choc);
               text-decoration: underline;
 
-              &::before{
-                /* content:'▶ '; */
-              }
+              /* &::before{
+                content:'▶ ';
+              } */
             }
             &:nth-last-child(1) {
               border-bottom: 0;
@@ -357,9 +357,6 @@ body {
             }
           }
         }
-        .menu_footer {
-        }
-
 
         &.SETTINGS{
 
