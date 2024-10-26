@@ -86,7 +86,7 @@ body {
 
 
 
-    .main_menu {
+    .pause_menu {
       display: none;
     }
     .playing {
@@ -194,6 +194,200 @@ body {
           &.last::after{
             font-family: monospace;
             content: '⬝';
+          }
+        }
+      }
+    }
+  }
+}
+
+#game.SCENE_STATE_MENU {
+  #ui {
+    display: flex;
+    .menu_close{
+      font-family: var(--font-pixel-2);
+      width: 48px;
+      text-align: right;
+    }
+    .pause_menu {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
+      gap: 1rem;
+
+      .menu {
+        font-family: var(--font-pixel-2);
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        width: 180px;
+        flex-basis: 15%;
+        /* height: 200px; */
+
+        border-radius: var(--border-radius);
+        border: 3px solid;
+        overflow: hidden;
+
+        background-color: wheat;
+        background-color: rgb(238, 232, 220);
+        
+        padding: .5rem .5rem;
+        
+
+        .menu_header{
+          /* font-family: monospace; */
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 2px solid;
+          padding-bottom: .3rem;
+          color: var(--color-dark-choc);
+
+
+        }
+        ul {
+          width: 100%;
+          /* padding-left: 1rem; */
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          .menu_item {
+            background-color: transparent;
+            border: none;
+            text-align: left;
+
+            padding: 0.5rem 0;
+            list-style: none;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: all .3s ease-in-out;
+            &.active {
+              /* list-style: circle; */
+              font-weight: bold;
+              color:var(--color-dark-choc);
+              &::before{
+                font-family: monospace;
+                content:'*   ';
+              }
+              /* font-weight: bold; */
+            }
+            &:hover{
+              color: var(--color-dark-choc);
+              text-decoration: underline;
+
+              &::before{
+                /* content:'▶ '; */
+              }
+            }
+            &:nth-last-child(1) {
+              border-bottom: 0;
+              text-align: right;
+              color: gray;
+  
+
+              &:hover{
+                opacity: .7;
+
+              }
+            }
+          }
+        }
+      }
+      #menu_window {
+        display: none;
+        position: absolute;
+        left: 20%;
+        width: 45%;
+        height: 40%;
+
+        background-color: rgb(238, 232, 220);
+        border: 3px solid ;
+        border-radius: var(--border-radius);
+
+        .menu_header {
+          /* font-weight: bold; */
+          padding: .5rem 1rem;;
+          border-bottom: 3px solid var(--text-color);
+          /* color: var(--color-dark-choc); */
+
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          .close{
+            color: var(--color-dark-choc);
+          }
+        }
+        .menu_content {
+          padding: 1rem;
+          .collectives {
+            display: none;
+          }
+          .items {
+            display: none;
+          }
+          .map {
+            display: none;
+          }
+          .settings {
+            display: none;
+          }
+
+          &.COLLECTIVES {
+            .collectives {
+              display: block;
+            }
+          }
+          &.ITEMS {
+            .items {
+              display: block;
+            }
+          }
+          &.MAP {
+            .map {
+              display: block;
+            }
+          }
+          &.SETTINGS {
+            .settings {
+              display: block;
+            }
+          }
+        }
+        .menu_footer {
+        }
+
+
+        &.SETTINGS{
+
+          .settings{
+            display: block;
+
+            .setting{
+              display: flex;
+              align-items: center;
+              gap: .5rem;
+  
+  
+              .toggle{
+                border: 1px;
+                background-color: transparent;
+                background-image: url('/assets/ui/Sprite sheet for Basic Pack.png');
+                background-position: -434px -67px;
+                background-repeat: no-repeat;
+                width: 32px;
+                height: 24px;
+                transform: scale(1);
+  
+                &.off{
+                  background-position: -434px -99px;
+  
+                }
+              }
+            }
           }
         }
       }
