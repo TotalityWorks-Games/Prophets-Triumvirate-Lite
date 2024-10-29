@@ -10,7 +10,7 @@ import {
   vec,
 } from 'excalibur';
 import { gridCells } from '../../utils';
-import { LOCATIONS, SCENE_STATE } from '../../constants';
+import { DIRECTIONS, LOCATIONS, SCENE_STATE } from '../../constants';
 
 // import scene specific items
 import { IronclawPortResources } from './Resources';
@@ -111,20 +111,20 @@ class IronClawPort extends Scene {
     const delsaran = new Delsaran(
       vec(gridCells(2), gridCells(14)),
       IronclawPortResources.DelsaranSpriteSheetPng,
-      'right'
+      DIRECTIONS.RIGHT
     );
 
     // guardOne and guardTwo block the exit to Ironclaw.
-    const guardOne = new Guard(
-      vec(gridCells(17), gridCells(3)),
-      wolfkinSpriteSheet,
-      'Wolfkin Guard One'
-    );
-    const guardTwo = new Guard(
-      vec(gridCells(19), gridCells(3)),
-      wolfkinSpriteSheet,
-      'Wolfkin Guard Two'
-    );
+    // const guardOne = new Guard(
+    //   vec(gridCells(17), gridCells(3)),
+    //   wolfkinSpriteSheet,
+    //   'Wolfkin Guard One'
+    // );
+    // const guardTwo = new Guard(
+    //   vec(gridCells(19), gridCells(3)),
+    //   wolfkinSpriteSheet,
+    //   'Wolfkin Guard Two'
+    // );
 
     // guardThree and guardFour watch over the Temple
     const guardThree = new Guard(
@@ -154,27 +154,27 @@ class IronClawPort extends Scene {
       vec(gridCells(29), gridCells(18)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen One',
-      'right'
+      DIRECTIONS.RIGHT
     );
 
     const citizenTwo = new Wolfkin2(
       vec(gridCells(14), gridCells(18)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen Two',
-      'right'
+      DIRECTIONS.RIGHT
     );
 
     const citizenThree = new Wolfkin2(
       vec(gridCells(25), gridCells(14)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen Three',
-      'right'
+      DIRECTIONS.RIGHT
     );
 
     return [
       delsaran,
-      guardOne,
-      guardTwo,
+      // guardOne,
+      // guardTwo,
       guardThree,
       guardFour,
       guardFive,

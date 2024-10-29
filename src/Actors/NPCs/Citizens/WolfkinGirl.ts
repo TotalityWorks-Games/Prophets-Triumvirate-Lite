@@ -1,20 +1,20 @@
 import { Vector, SpriteSheet, Engine, Animation, Sprite } from 'excalibur';
 import { Citizen } from './Citizen';
-import { Direction } from '../../../constants';
+import { DIRECTIONS } from '../../../constants';
 
 export class WolfkinGirl extends Citizen {
-  direction: Direction;
+  direction: DIRECTIONS;
   spriteSheet: SpriteSheet;
   constructor(
     pos: Vector,
     spriteSheet: SpriteSheet,
     name: string,
-    direction?: Direction
+    direction?: DIRECTIONS
   ) {
     super(pos);
     this.pos = pos;
     this.spriteSheet = spriteSheet;
-    this.direction = direction ?? 'down';
+    this.direction = direction ?? DIRECTIONS.DOWN;
     this.name = name;
   }
 

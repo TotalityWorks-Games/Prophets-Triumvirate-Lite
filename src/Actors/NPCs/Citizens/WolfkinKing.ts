@@ -7,21 +7,21 @@ import {
   ImageSource,
 } from 'excalibur';
 import { Citizen } from './Citizen';
-import { Direction } from '../../../constants';
+import { DIRECTIONS } from '../../../constants';
 
 export class WolfkinKing extends Citizen {
-  direction: Direction;
+  direction: DIRECTIONS;
   resources: ImageSource;
   constructor(
     pos: Vector,
     resources: ImageSource,
     name: string,
-    direction?: Direction
+    direction?: DIRECTIONS
   ) {
     super(pos);
     this.pos = pos;
     this.resources = resources;
-    this.direction = direction ?? 'down';
+    this.direction = direction ?? DIRECTIONS.DOWN;
     this.name = name;
   }
 
