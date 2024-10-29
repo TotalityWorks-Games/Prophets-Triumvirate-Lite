@@ -1,10 +1,15 @@
 // enums
 export enum LOCATIONS {
-  IRONCLAW_PORT = 'IRONCLAW_PORT',
+  // common interiors
   THIRSTY_PELIKAN = 'THIRSTY_PELIKAN',
   SHOP = 'SHOP',
   TEMPLE = 'TEMPLE',
   PALACE = 'PALACE',
+  // cities:
+  IRONCLAW_PORT = 'IRONCLAW_PORT',
+  SWAMBY = 'SWAMBY',
+  // routes:
+  ROUTE1 = 'ROUTE1',
 }
 export enum DIRECTIONS {
   UP = 'up',

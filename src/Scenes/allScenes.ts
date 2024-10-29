@@ -7,15 +7,21 @@ import {
   ironClawPortScene,
   ironClawPortSceneLoader,
 } from './IronclawPort-1/Scene';
+import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
 
 export const allScenes = {
   start: {
     scene: ironClawPortScene,
     loader: ironClawPortSceneLoader,
   },
+  swamby: {
+    scene: swambyScene,
+    loader: swambySceneLoader,
+  },
 };
 
 export enum SceneNames {
+  // Ironclaw Scenes
   START = 'start',
   IRONCLAW_PORT_THIRSTY_PELIKAN = 'ironClawPortThirstyPelikan',
   IRONCLAW_PORT_TEMPLE_INTERIOR = 'ironClawPortTempleInterior',
@@ -23,11 +29,14 @@ export enum SceneNames {
   IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1 = 'ironClawPortSmallHouseInterior1',
   IRONCLAW_PORT_SMALL_HOUSE_INTERIOR2 = 'ironClawPortSmallHouseInterior2',
   IRONCLAW_PORT_PALACE_INTERIOR = 'ironClawPlaceInterior',
+  // Swamby Scenes
+  SWAMBY = 'swamby',
 }
 
 export const handleSceneExit = (engine: Engine, scene: SceneNames) => {
   console.log(scene);
   switch (scene) {
+    // IRONCLAW SCENES START
     case SceneNames.START:
       if (musicManager.location !== LOCATIONS.IRONCLAW_PORT) {
         musicManager.stopMusic();
@@ -62,6 +71,16 @@ export const handleSceneExit = (engine: Engine, scene: SceneNames) => {
     case SceneNames.IRONCLAW_PORT_SMALL_HOUSE_INTERIOR2:
       engine.goToScene(scene);
       break;
+    // IRONCLAW SCENES END
+    //
+    // SWAMBY SCENES START
+    case SceneNames.SWAMBY:
+      if (musicManager.location !== LOCATIONS.SWAMBY) {
+        musicManager.stopMusic();
+      }
+      engine.goToScene(scene);
+      break;
+    // SWAMBY SCENES END
     default:
       break;
   }
