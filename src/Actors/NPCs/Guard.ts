@@ -7,16 +7,16 @@ import {
   SpriteSheet,
   Vector,
 } from 'excalibur';
-import { Direction } from '../../constants';
+import { DIRECTIONS } from '../../constants';
 
 export class Guard extends Actor {
-  direction: Direction;
+  direction: DIRECTIONS;
   spriteSheet: SpriteSheet;
   constructor(
     pos: Vector,
     spriteSheet: SpriteSheet,
     name: string,
-    direction?: Direction
+    direction?: DIRECTIONS
   ) {
     super({
       pos,
@@ -27,7 +27,7 @@ export class Guard extends Actor {
 
     this.z = 100;
     this.scale = new Vector(1.8, 1.8);
-    this.direction = direction ?? 'down';
+    this.direction = direction ?? DIRECTIONS.DOWN;
     this.spriteSheet = spriteSheet;
     this.name = name;
   }

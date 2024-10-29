@@ -24,6 +24,8 @@ import { musicManager } from '../../Managers/MusicManager';
 import { MainGuy } from '../../Actors/Main/Player';
 import { Delsaran } from '../../Actors/Main/Delsaran';
 import { Guard } from '../../Actors/NPCs/Guard';
+import { Wolfkin1 } from '../../Actors/NPCs/Citizens/Wolfkin1';
+import { Wolfkin2 } from '../../Actors/NPCs/Citizens/Wolfkin2';
 
 class IronClawPort extends Scene {
   game_container!: HTMLElement;
@@ -147,6 +149,27 @@ class IronClawPort extends Scene {
       'Wolfkin Guard Four'
     );
 
+    const citizenOne = new Wolfkin1(
+      vec(gridCells(29), gridCells(18)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen One',
+      'right'
+    );
+
+    const citizenTwo = new Wolfkin2(
+      vec(gridCells(14), gridCells(18)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen One',
+      'right'
+    );
+
+    const citizenThree = new Wolfkin2(
+      vec(gridCells(25), gridCells(14)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen One',
+      'right'
+    );
+
     return [
       delsaran,
       guardOne,
@@ -155,6 +178,9 @@ class IronClawPort extends Scene {
       guardFour,
       guardFive,
       guardSix,
+      citizenOne,
+      citizenTwo,
+      citizenThree,
     ];
   }
 }
