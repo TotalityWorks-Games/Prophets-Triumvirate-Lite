@@ -141,12 +141,12 @@ class IronClawPort extends Scene {
     const guardFive = new Guard(
       vec(gridCells(9), gridCells(10)),
       wolfkinSpriteSheet,
-      'Wolfkin Guard Three'
+      'Wolfkin Guard Five'
     );
     const guardSix = new Guard(
       vec(gridCells(15), gridCells(10)),
       wolfkinSpriteSheet,
-      'Wolfkin Guard Four'
+      'Wolfkin Guard Six'
     );
 
     const citizenOne = new Wolfkin1(
@@ -159,14 +159,14 @@ class IronClawPort extends Scene {
     const citizenTwo = new Wolfkin2(
       vec(gridCells(14), gridCells(18)),
       wolfkinSpriteSheet,
-      'Wolfkin Citizen One',
+      'Wolfkin Citizen Two',
       'right'
     );
 
     const citizenThree = new Wolfkin2(
       vec(gridCells(25), gridCells(14)),
       wolfkinSpriteSheet,
-      'Wolfkin Citizen One',
+      'Wolfkin Citizen Three',
       'right'
     );
 
