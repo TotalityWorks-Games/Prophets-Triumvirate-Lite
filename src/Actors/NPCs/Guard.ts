@@ -74,7 +74,7 @@ export class Guard extends Actor {
     const upIdle = new Animation({
       frames: [
         {
-          graphic: this.spriteSheet.getSprite(1, 7) as Sprite,
+          graphic: this.spriteSheet.getSprite(10, 3) as Sprite,
           duration: 150,
         },
       ],

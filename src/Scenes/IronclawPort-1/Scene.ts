@@ -135,7 +135,27 @@ class IronClawPort extends Scene {
       'Wolfkin Guard Four'
     );
 
-    return [delsaran, guardOne, guardTwo, guardThree, guardFour];
+    // guardThree and guardFour watch over the Temple
+    const guardFive = new Guard(
+      vec(gridCells(9), gridCells(10)),
+      wolfkinSpriteSheet,
+      'Wolfkin Guard Three'
+    );
+    const guardSix = new Guard(
+      vec(gridCells(15), gridCells(10)),
+      wolfkinSpriteSheet,
+      'Wolfkin Guard Four'
+    );
+
+    return [
+      delsaran,
+      guardOne,
+      guardTwo,
+      guardThree,
+      guardFour,
+      guardFive,
+      guardSix,
+    ];
   }
 }
 
