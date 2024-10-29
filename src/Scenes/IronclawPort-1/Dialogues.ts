@@ -1,5 +1,9 @@
 export const IronclawPortDialogues = [
   {
+    actor: 'Delsaran',
+    text: 'Found an item!',
+  },
+  {
     actor: 'Wolfkin Guard One',
     text: 'Found an item!',
   },

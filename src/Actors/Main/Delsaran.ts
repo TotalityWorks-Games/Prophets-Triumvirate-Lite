@@ -13,7 +13,7 @@ import { DIRECTIONS } from '../../constants';
 export class Delsaran extends Actor {
   direction: DIRECTIONS;
   resources: ImageSource;
-  constructor(pos: Vector, resources: ImageSource) {
+  constructor(pos: Vector, resources: ImageSource, direction?: DIRECTIONS) {
     super({
       pos,
       width: 32,
@@ -22,8 +22,8 @@ export class Delsaran extends Actor {
     });
 
     this.z = 100;
-    this.scale = new Vector(1.8, 1.8);
-    this.direction = DIRECTIONS.DOWN;
+    this.scale = new Vector(2, 2);
+    this.direction = direction ?? DIRECTIONS.DOWN;
     this.resources = resources;
     this.name = 'Delsaran';
   }

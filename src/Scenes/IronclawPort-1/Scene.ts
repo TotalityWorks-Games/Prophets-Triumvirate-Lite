@@ -109,8 +109,9 @@ class IronClawPort extends Scene {
 
     // Delsaran drinking in the harbor
     const delsaran = new Delsaran(
-      vec(gridCells(65), gridCells(71)),
-      IronclawPortResources.DelsaranSpriteSheetPng
+      vec(gridCells(2), gridCells(14)),
+      IronclawPortResources.DelsaranSpriteSheetPng,
+      'right'
     );
 
     // guardOne and guardTwo block the exit to Ironclaw.
