@@ -18,6 +18,7 @@ import talkingSound from '../../../Resources/Sounds/Effects/bounce-dur2Short-pit
 import heroPath from '../../../Resources/Sheets/Characters/Main/Player/Character006.png?url';
 import heroRunningPath from '../../../Resources/Sheets/Characters/Main/Player/Chara006.png?url';
 import delsaranPath from '../../../Resources/Sheets/Characters/Main/Delsaran/Character041.png?url';
+import wolfkinPath from '../../../Resources/Sheets/Characters/Wolfkin/beast_tribe_1.png?url';
 import campGravesSetPath from '../../../Resources/Sheets/Locations/Camp_Graves.png?url';
 import clBuildingsSetPath from '../../../Resources/Sheets/Locations/CL_Buildings.png?url';
 import clMainLevelSetPath from '../../../Resources/Sheets/Locations/CL_MainLev.png?url';
@@ -54,6 +55,11 @@ export const IronclawPortResources = {
   ),
   DelsaranSpriteSheetPng: new ImageSource(
     delsaranPath,
+    false,
+    ImageFiltering.Pixel
+  ),
+  WolfkinSpriteSheetPng: new ImageSource(
+    wolfkinPath,
     false,
     ImageFiltering.Pixel
   ),

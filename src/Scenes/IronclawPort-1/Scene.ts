@@ -1,10 +1,12 @@
 import {
   BoundingBox,
   Engine,
+  ImageSource,
   Keys,
   Loader,
   Scene,
   SceneActivationContext,
+  SpriteSheet,
   vec,
 } from 'excalibur';
 import { gridCells } from '../../utils';
@@ -21,6 +23,7 @@ import { musicManager } from '../../Managers/MusicManager';
 // import Actors
 import { MainGuy } from '../../Actors/Main/Player';
 import { Delsaran } from '../../Actors/Main/Delsaran';
+import { Guard } from '../../Actors/NPCs/Guard';
 
 class IronClawPort extends Scene {
   game_container!: HTMLElement;
@@ -92,13 +95,35 @@ class IronClawPort extends Scene {
   }
 
   private setupNPCs() {
+    const wolfkinSpriteSheet = SpriteSheet.fromImageSource({
+      image: IronclawPortResources.WolfkinSpriteSheetPng as ImageSource,
+      grid: {
+        spriteWidth: 26,
+        spriteHeight: 36,
+        rows: 8,
+        columns: 12,
+      },
+    });
+
     // Delsaran drinking in the harbor
     const delsaran = new Delsaran(
       vec(gridCells(65), gridCells(71)),
       IronclawPortResources.DelsaranSpriteSheetPng
     );
 
-    return [delsaran];
+    // guardOne and guardTwo block the exit to Ironclaw.
+    const guardOne = new Guard(
+      vec(gridCells(17), gridCells(3)),
+      wolfkinSpriteSheet,
+      'Wolfkin Guard One'
+    );
+    const guardTwo = new Guard(
+      vec(gridCells(19), gridCells(3)),
+      wolfkinSpriteSheet,
+      'Wolfkin Guard Two'
+    );
+
+    return [delsaran, guardOne, guardTwo];
   }
 }
 
