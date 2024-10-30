@@ -18,6 +18,7 @@ import talkingSound from '../../../Resources/Sounds/Effects/bounce-dur2Short-pit
 import heroPath from '../../../Resources/Sheets/Characters/Main/Player/Character006.png?url';
 import heroRunningPath from '../../../Resources/Sheets/Characters/Main/Player/Chara006.png?url';
 import wolfkinPath from '../../../Resources/Sheets/Characters/Wolfkin/beast_tribe_1.png?url';
+import kingPath from '../../../Resources/Sheets/Characters/Wolfkin/beast_hero_1.png?url';
 import clMainLevelSetPath from '../../../Resources/Sheets/Locations/CL_MainLev.png?url';
 import wetlandsDecProps2SetPath from '../../../Resources/Sheets/Locations/Dec_props2.png?url';
 import waterSetPath from '../../../Resources/Sheets/Locations/water.png?url';
@@ -39,6 +40,7 @@ export const SwambyResources = {
     false,
     ImageFiltering.Pixel
   ),
+  KingSpriteSheetPng: new ImageSource(kingPath, false, ImageFiltering.Pixel),
   Music: new Sound(swambyMP3, swambyWav, swambyOgg),
   CollisionSound: new Sound(collisionSound),
   WalkingSound: new Sound(walkingSound),

@@ -189,12 +189,12 @@ class UIManager {
         return dialogue.actor === this.characterToDialogueWith;
       });
 
-      if (dialogue?.isCharacter) {
-        this.talkingSound?.play(0.3);
-        setInterval(() => {
-          this.talkingSound?.stop();
-        }, 1000);
-      }
+      // if (dialogue?.isCharacter) {
+      //   this.talkingSound?.play(0.1);
+      //   setInterval(() => {
+      //     this.talkingSound?.stop();
+      //   }, 1000);
+      // }
 
       if (dialogue) {
         // then add this text

@@ -23,6 +23,9 @@ import { musicManager } from '../../Managers/MusicManager';
 // import Actors
 import { MainGuy } from '../../Actors/Main/Player';
 import { Wolfkin1 } from '../../Actors/NPCs/Citizens/Wolfkin1';
+import { WolfkinKing } from '../../Actors/NPCs/Citizens/WolfkinKing';
+import { Wolfkin2 } from '../../Actors/NPCs/Citizens/Wolfkin2';
+import { Guard } from '../../Actors/NPCs/Guard';
 
 class Swamby extends Scene {
   game_container!: HTMLElement;
@@ -39,8 +42,9 @@ class Swamby extends Scene {
     // add player character
     /* Default Player Location: pos: vec(2300, 2550), */
     const player = new MainGuy(
-      vec(gridCells(16), gridCells(17)),
-      SwambyResources
+      vec(gridCells(10), gridCells(17)),
+      SwambyResources,
+      DIRECTIONS.UP
     );
     engine.currentScene.add(player);
     engine.currentScene.camera.zoom = 0.8;
@@ -51,6 +55,7 @@ class Swamby extends Scene {
       engine.add(character);
     });
 
+    // engine.currentScene.camera.strategy.lockToActor(npcs[3]);
     engine.currentScene.camera.strategy.lockToActor(player);
     SwambyResources.TiledMap.addToScene(engine.currentScene);
   }
@@ -111,7 +116,48 @@ class Swamby extends Scene {
       DIRECTIONS.RIGHT
     );
 
-    return [citizenOne];
+    const citizenTwo = new Wolfkin2(
+      vec(gridCells(10), gridCells(6)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Two'
+    );
+
+    const citizenThree = new Wolfkin1(
+      vec(gridCells(19), gridCells(12)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Three',
+      DIRECTIONS.LEFT
+    );
+
+    const citizenFour = new Wolfkin1(
+      vec(gridCells(19), gridCells(3)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Four',
+      DIRECTIONS.UP
+    );
+
+    const warriorOne = new Guard(
+      vec(gridCells(17), gridCells(15)),
+      wolfkinSpriteSheet,
+      'Wolfkin Warrior One',
+      DIRECTIONS.DOWN
+    );
+
+    const chieftanValour = new WolfkinKing(
+      vec(gridCells(12), gridCells(14)),
+      SwambyResources.KingSpriteSheetPng,
+      'Chieftan Valour',
+      DIRECTIONS.LEFT
+    );
+
+    return [
+      citizenOne,
+      citizenTwo,
+      citizenThree,
+      citizenFour,
+      warriorOne,
+      chieftanValour,
+    ];
   }
 }
 
