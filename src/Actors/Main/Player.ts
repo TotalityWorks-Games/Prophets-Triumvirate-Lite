@@ -61,6 +61,7 @@ export class MainGuy extends Actor {
     this.direction = direction ?? DIRECTIONS.DOWN;
     this.resources = resources;
     this.playerState = SCENE_STATE.PLAYING;
+    console.log('Player created');
   }
 
   onInitialize(engine: Engine): void {

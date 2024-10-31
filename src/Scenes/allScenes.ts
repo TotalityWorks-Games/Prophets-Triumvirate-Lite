@@ -26,6 +26,10 @@ import {
   shopInteriorScene as ironclawShop,
   shopInteriorSceneLoader as ironclawShopLoader,
 } from './IronclawPort-1/Interiors/Shop/Scene';
+import {
+  ironclawThirstyPelikanSceneLoader,
+  thirstyPelikanInteriorScene as ironclawPelikan,
+} from './IronclawPort-1/Interiors/ThirstyPelikan/Scene';
 
 export const allScenes = {
   // Ironclaw Scenes:
@@ -48,6 +52,10 @@ export const allScenes = {
   ironClawPortShopInterior: {
     scene: ironclawShop,
     loader: ironclawShopLoader,
+  },
+  ironClawPortThirstyPelikan: {
+    scene: ironclawPelikan,
+    loader: ironclawThirstyPelikanSceneLoader,
   },
   // Swamby Scenes:
   swamby: {
