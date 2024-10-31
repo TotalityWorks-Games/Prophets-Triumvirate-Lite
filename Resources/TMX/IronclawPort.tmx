@@ -83,7 +83,7 @@
   <object id="3" name="route1" x="531" y="5" width="90" height="54"/>
   <object id="4" name="ironclawShopInterior" x="682" y="142" width="46" height="49"/>
   <object id="5" name="ironclawThirstyPelikan" x="819" y="130" width="88" height="77"/>
-  <object id="7" name="ironclawHouseInterior" x="673" y="424" width="59" height="59"/>
+  <object id="7" name="ironClawPortSmallHouseInterior2" x="673" y="424" width="59" height="59"/>
  </objectgroup>
  <objectgroup id="13" name="ObjectsToInvestigate" visible="0" locked="1">
   <object id="8" name="hiddenItem1" x="931" y="318" width="30" height="38">

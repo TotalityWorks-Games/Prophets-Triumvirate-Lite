@@ -18,6 +18,10 @@ import {
 } from './IronclawPort-1/Interiors/IronclawPalace/Scene';
 // import Swamby scenes
 import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
+import {
+  smallHouseInterior2Scene,
+  smallHouseInterior2SceneLoader,
+} from './IronclawPort-1/Interiors/SmallHouse2/Scene';
 
 export const allScenes = {
   // Ironclaw Scenes:
@@ -33,6 +37,10 @@ export const allScenes = {
     scene: palaceInteriorScene,
     loader: palaceInteriorSceneLoader,
   },
+  ironClawPortSmallHouseInterior2: {
+    scene: smallHouseInterior2Scene,
+    loader: smallHouseInterior2SceneLoader,
+  },
   // Swamby Scenes:
   swamby: {
     scene: swambyScene,
@@ -46,7 +54,7 @@ export enum SceneNames {
   IRONCLAW_PORT_THIRSTY_PELIKAN = 'ironClawPortThirstyPelikan',
   IRONCLAW_PORT_TEMPLE_INTERIOR = 'ironClawPortTempleInterior',
   IRONCLAW_PORT_SHOP_INTERIOR = 'ironClawPortShopInterior',
-  IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1 = 'ironClawPortSmallHouseInterior1',
+  // IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1 = 'ironClawPortSmallHouseInterior1',
   IRONCLAW_PORT_SMALL_HOUSE_INTERIOR2 = 'ironClawPortSmallHouseInterior2',
   IRONCLAW_PORT_PALACE_INTERIOR = 'ironClawPlaceInterior',
   // Swamby Scenes
@@ -87,7 +95,7 @@ export const handleSceneExit = (engine: Engine, scene: SceneNames) => {
       }
       engine.goToScene(scene);
       break;
-    case SceneNames.IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1:
+    // case SceneNames.IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1:
     case SceneNames.IRONCLAW_PORT_SMALL_HOUSE_INTERIOR2:
       engine.goToScene(scene);
       break;
