@@ -7,11 +7,15 @@ import {
   ironClawPortScene,
   ironClawPortSceneLoader,
 } from './IronclawPort-1/Scene';
-import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
 import {
   templeInteriorScene,
   templeInteriorSceneLoader,
 } from './IronclawPort-1/Interiors/TempleOfBekna/Scene';
+import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
+import {
+  palaceInteriorScene,
+  palaceInteriorSceneLoader,
+} from './IronclawPort-1/Interiors/IronclawPalace/Scene';
 
 export const allScenes = {
   // Ironclaw Scenes:
@@ -23,6 +27,11 @@ export const allScenes = {
     scene: templeInteriorScene,
     loader: templeInteriorSceneLoader,
   },
+  ironClawPlaceInterior: {
+    scene: palaceInteriorScene,
+    loader: palaceInteriorSceneLoader,
+  },
+  // Swamby Scenes:
   swamby: {
     scene: swambyScene,
     loader: swambySceneLoader,

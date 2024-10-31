@@ -10,7 +10,7 @@ As the gods interfere in the affairs of men, you and the Triumvirate must decide
 
 Will you save the Empire or let it crumble? Will you challenge the Keeper of Magic and inherit the virtue of Time or would you rather steal magical artifacts and build up the College of Elven Mysteries?
 
-In this top-down 2D RPG with a 4 character+ party and turn-based combat, your decisions will shape the destinies of everyone you meet.
+In this top-down 2D RPG with a 4+ character party and turn-based combat, your decisions will shape the destinies of everyone you meet.
 
 This is the smaller, free version of the much larger commercial game.
 
