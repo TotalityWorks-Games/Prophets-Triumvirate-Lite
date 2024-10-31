@@ -48,3 +48,7 @@ Making a solo indie game is not easy, and I certainly could not have done it wit
 
 [SEEDGAMELAB](https://seedgamelab.itch.io/)
 [Dryoma] (https://dryoma.itch.io/)
+
+#### UI Elements
+
+[finalbossblues](https://finalbossblues.itch.io/)
