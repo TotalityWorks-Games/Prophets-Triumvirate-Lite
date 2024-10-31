@@ -15,6 +15,8 @@ import { DIRECTIONS, LOCATIONS, SCENE_STATE } from '../../../../constants';
 import { uiManager } from '../../../../Managers/UIManager';
 import { ThirstyPelikanInteriorDialogues } from './Dialogues';
 import { musicManager } from '../../../../Managers/MusicManager';
+import { gridCells } from '../../../../utils';
+import { Zephyrius } from '../../../../Actors/Main/Zephyrius';
 
 class ThirstyPelikan extends Scene {
   game_container!: HTMLElement;
@@ -35,7 +37,6 @@ class ThirstyPelikan extends Scene {
       DIRECTIONS.UP
     );
     engine.currentScene.add(player);
-    engine.currentScene.camera.strategy.lockToActor(player);
     engine.currentScene.camera.zoom = 0.8;
 
     // add all npcs to game
@@ -43,6 +44,8 @@ class ThirstyPelikan extends Scene {
       engine.add(character);
     });
 
+    // engine.currentScene.camera.strategy.lockToActor(npcs[0]);
+    engine.currentScene.camera.strategy.lockToActor(player);
     ThirstyPelikanInteriorResources.TiledMap.addToScene(engine.currentScene);
   }
 
@@ -94,13 +97,56 @@ class ThirstyPelikan extends Scene {
       },
     });
 
-    const citizenOne = new Wolfkin1(
-      vec(250, 250),
-      wolfkinSpriteSheet,
-      'Wolfkin Citizen One'
+    // Zephyrius drinking in the Thirsty Pelikan
+    const zephyrius = new Zephyrius(
+      vec(gridCells(2), gridCells(11)),
+      ThirstyPelikanInteriorResources.YoungZephyriusSpriteSheetPng,
+      DIRECTIONS.RIGHT
     );
 
-    return [citizenOne];
+    const citizenOne = new Wolfkin1(
+      vec(gridCells(8), gridCells(9)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen One',
+      DIRECTIONS.DOWN
+    );
+
+    const citizenTwo = new Wolfkin1(
+      vec(gridCells(2), gridCells(16)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Two',
+      DIRECTIONS.DOWN
+    );
+
+    const citizenThree = new Wolfkin1(
+      vec(gridCells(2), gridCells(18)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Three',
+      DIRECTIONS.UP
+    );
+
+    const citizenFour = new Wolfkin1(
+      vec(gridCells(18), gridCells(16)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Four',
+      DIRECTIONS.UP
+    );
+
+    const citizenFive = new Wolfkin1(
+      vec(gridCells(18), gridCells(14)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen Five',
+      DIRECTIONS.DOWN
+    );
+
+    return [
+      zephyrius,
+      citizenOne,
+      citizenTwo,
+      citizenThree,
+      citizenFour,
+      citizenFive,
+    ];
   }
 }
 

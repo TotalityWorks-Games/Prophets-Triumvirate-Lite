@@ -10,7 +10,7 @@ import {
 } from 'excalibur';
 import { DIRECTIONS, RACES, SEXES } from '../../constants';
 
-export class Delsaran extends Actor {
+export class Zephyrius extends Actor {
   direction: DIRECTIONS;
   resources: ImageSource;
   race: RACES;
@@ -28,8 +28,8 @@ export class Delsaran extends Actor {
     this.scale = new Vector(2, 2);
     this.direction = direction ?? DIRECTIONS.DOWN;
     this.resources = resources;
-    this.name = 'Delsaran';
-    this.race = RACES.HALF_ELF;
+    this.name = 'Zephyrius';
+    this.race = RACES.HUMAN;
     this.sex = SEXES.MALE;
   }
 

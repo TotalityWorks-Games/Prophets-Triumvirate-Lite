@@ -1,5 +1,10 @@
 export const ThirstyPelikanInteriorDialogues = [
   {
+    actor: `Zephyrius`,
+    text: `Hey [NAME]! Wanna help me snatch something real quick?`,
+    isCharacter: true,
+  },
+  {
     actor: `Wolfkin Citizen One`,
     text: `Stuff and things!`,
     isCharacter: true,

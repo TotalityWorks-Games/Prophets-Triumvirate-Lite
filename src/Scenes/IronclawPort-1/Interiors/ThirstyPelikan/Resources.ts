@@ -17,6 +17,7 @@ import talkingSound from '../../../../../Resources/Sounds/Effects/bounce-dur2Sho
 // import spritesheets
 import heroPath from '../../../../../Resources/Sheets/Characters/Main/Player/Character006.png?url';
 import heroRunningPath from '../../../../../Resources/Sheets/Characters/Main/Player/Chara006.png?url';
+import youngZephPath from '../../../../../Resources/Sheets/Characters/Main/Zephyrius/Character026.png?url';
 import wolfkinPath from '../../../../../Resources/Sheets/Characters/Wolfkin/beast_tribe_1.png?url';
 import clBuildingsSetPath from '../../../../../Resources/Sheets/Locations/CL_Buildings.png?url';
 import clCraftingSetPath from '../../../../../Resources/Sheets/Locations/CL_Crafting.png?url';
@@ -32,6 +33,11 @@ export const ThirstyPelikanInteriorResources = {
   HeroSpriteSheetPng: new ImageSource(heroPath, false, ImageFiltering.Pixel),
   HeroRunningSpriteSheetPng: new ImageSource(
     heroRunningPath,
+    false,
+    ImageFiltering.Pixel
+  ),
+  YoungZephyriusSpriteSheetPng: new ImageSource(
+    youngZephPath,
     false,
     ImageFiltering.Pixel
   ),
