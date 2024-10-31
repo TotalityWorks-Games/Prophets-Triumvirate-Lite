@@ -1,7 +1,7 @@
 export const IronclawPortDialogues = [
   {
     actor: 'Delsaran',
-    text: 'Found an item!',
+    text: 'Hey [NAME]! Did you know you can hold SHIFT to run?',
     isCharacter: true,
   },
   {
@@ -16,37 +16,37 @@ export const IronclawPortDialogues = [
   },
   {
     actor: 'Wolfkin Guard Three',
-    text: 'Found an item!',
+    text: 'This is the Temple of Bekna, our goddess.',
     isCharacter: true,
   },
   {
     actor: 'Wolfkin Guard Four',
-    text: 'Found an item!',
+    text: 'It is an honor to stand guard for Bekna.',
     isCharacter: true,
   },
   {
     actor: 'Wolfkin Guard Five',
-    text: 'Found an item!',
+    text: 'This is the Palace of King Ironclaw.',
     isCharacter: true,
   },
   {
     actor: 'Wolfkin Guard Six',
-    text: 'Found an item!',
+    text: `Don't play games. Guard duty is serious!`,
     isCharacter: true,
   },
   {
     actor: 'Wolfkin Citizen One',
-    text: 'Found an item!',
+    text: `The sea is just so beautiful, isn't it?`,
     isCharacter: true,
   },
   {
     actor: 'Wolfkin Citizen Two',
-    text: 'Found an item!',
+    text: 'Welcome to Ironclaw! The first Wolfkin city!',
     isCharacter: true,
   },
   {
     actor: 'Wolfkin Citizen Three',
-    text: 'Found an item!',
+    text: `I'm busy! Go away!`,
     isCharacter: true,
   },
   {

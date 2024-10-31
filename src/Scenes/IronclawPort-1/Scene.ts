@@ -123,12 +123,12 @@ class IronClawPort extends Scene {
 
     // guardThree and guardFour watch over the Temple
     const guardThree = new Guard(
-      vec(gridCells(1), gridCells(10)),
+      vec(gridCells(2), gridCells(10)),
       wolfkinSpriteSheet,
       'Wolfkin Guard Three'
     );
     const guardFour = new Guard(
-      vec(gridCells(7), gridCells(10)),
+      vec(gridCells(6), gridCells(10)),
       wolfkinSpriteSheet,
       'Wolfkin Guard Four'
     );
