@@ -22,6 +22,10 @@ import {
   smallHouseInterior2Scene,
   smallHouseInterior2SceneLoader,
 } from './IronclawPort-1/Interiors/SmallHouse2/Scene';
+import {
+  shopInteriorScene as ironclawShop,
+  shopInteriorSceneLoader as ironclawShopLoader,
+} from './IronclawPort-1/Interiors/Shop/Scene';
 
 export const allScenes = {
   // Ironclaw Scenes:
@@ -40,6 +44,10 @@ export const allScenes = {
   ironClawPortSmallHouseInterior2: {
     scene: smallHouseInterior2Scene,
     loader: smallHouseInterior2SceneLoader,
+  },
+  ironClawPortShopInterior: {
+    scene: ironclawShop,
+    loader: ironclawShopLoader,
   },
   // Swamby Scenes:
   swamby: {
