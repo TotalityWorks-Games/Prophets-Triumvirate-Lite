@@ -16,6 +16,7 @@ export class Delsaran extends Actor {
   constructor(pos: Vector, resources: ImageSource, direction?: DIRECTIONS) {
     super({
       pos,
+      radius: 10,
       width: 32,
       height: 32,
       collisionType: CollisionType.Fixed,

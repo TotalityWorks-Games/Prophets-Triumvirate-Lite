@@ -85,7 +85,7 @@ class SmallHouse2 extends Scene {
     });
 
     const citizenOne = new Wolfkin1(
-      vec(gridCells(2), gridCells(6)),
+      vec(gridCells(3), gridCells(6)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen One'
     );

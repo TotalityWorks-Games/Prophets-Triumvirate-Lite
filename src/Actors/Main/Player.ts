@@ -1,6 +1,7 @@
 import {
   Actor,
   Animation,
+  CircleCollider,
   Collider,
   CollisionContact,
   CollisionType,
@@ -19,6 +20,10 @@ import { Config } from '../../config';
 import { uiManager } from '../../Managers/UIManager';
 import { handleSceneExit, SceneNames } from '../../Scenes/allScenes';
 
+const circle = new CircleCollider({
+  radius: 11,
+  offset: vec(0, 4),
+});
 export class MainGuy extends Actor {
   public playerState: SCENE_STATE;
   public nearToNPC: any;
@@ -45,12 +50,13 @@ export class MainGuy extends Actor {
   ) {
     super({
       pos,
+      collider: circle,
       width: 32,
       height: 32,
       collisionType: CollisionType.Active,
     });
 
-    this.z = 100;
+    this.z = 200;
     this.scale = new Vector(2, 2);
     this.direction = direction ?? DIRECTIONS.DOWN;
     this.resources = resources;

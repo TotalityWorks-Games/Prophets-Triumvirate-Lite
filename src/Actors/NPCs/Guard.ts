@@ -20,6 +20,7 @@ export class Guard extends Actor {
   ) {
     super({
       pos,
+      radius: 10,
       width: 32,
       height: 32,
       collisionType: CollisionType.Fixed,
