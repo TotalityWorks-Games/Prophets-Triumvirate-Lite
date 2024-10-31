@@ -4,7 +4,7 @@ export class Citizen extends Actor {
   constructor(pos: Vector) {
     super({
       pos,
-      radius: 10,
+      radius: 12,
       width: 32,
       height: 32,
       collisionType: CollisionType.Fixed,
