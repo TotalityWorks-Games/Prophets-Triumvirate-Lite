@@ -1,9 +1,8 @@
 import {
   BoundingBox,
+  DefaultLoader,
   Engine,
   ImageSource,
-  Keys,
-  Loader,
   Scene,
   SceneActivationContext,
   SpriteSheet,
@@ -160,7 +159,7 @@ class Swamby extends Scene {
 export const swambyScene = new Swamby();
 
 // loader
-export const swambySceneLoader = new Loader();
+export const swambySceneLoader = new DefaultLoader();
 for (let resource of Object.values(SwambyResources)) {
   swambySceneLoader.addResource(resource);
 }
