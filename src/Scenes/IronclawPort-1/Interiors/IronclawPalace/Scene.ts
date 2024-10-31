@@ -16,6 +16,9 @@ import { uiManager } from '../../../../Managers/UIManager';
 import { PalaceInteriorDialogues } from './Dialogues';
 import { musicManager } from '../../../../Managers/MusicManager';
 import { WolfkinKing } from '../../../../Actors/NPCs/Citizens/WolfkinKing';
+import { gridCells } from '../../../../utils';
+import { Guard } from '../../../../Actors/NPCs/Guard';
+import { Wolfkin2 } from '../../../../Actors/NPCs/Citizens/Wolfkin2';
 
 class Palace extends Scene {
   game_container!: HTMLElement;
@@ -76,7 +79,7 @@ class Palace extends Scene {
   private setupNPCs() {
     // add king
     const kingIronclaw = new WolfkinKing(
-      vec(320, 85),
+      vec(gridCells(10), gridCells(5)),
       PalaceInteriorResources.KingSpriteSheetPng,
       'King Ironclaw'
     );
@@ -92,13 +95,34 @@ class Palace extends Scene {
       },
     });
 
-    const citizenOne = new Wolfkin1(
-      vec(50, 150),
+    const guardOne = new Guard(
+      vec(gridCells(10), gridCells(13)),
       wolfkinSpriteSheet,
-      'Wolfkin Citizen One'
+      'Wolfkin Guard One'
     );
 
-    return [citizenOne, kingIronclaw];
+    const guardTwo = new Guard(
+      vec(gridCells(7), gridCells(18)),
+      wolfkinSpriteSheet,
+      'Wolfkin Guard Two',
+      DIRECTIONS.UP
+    );
+
+    const guardThree = new Guard(
+      vec(gridCells(13), gridCells(18)),
+      wolfkinSpriteSheet,
+      'Wolfkin Guard Three',
+      DIRECTIONS.UP
+    );
+
+    const citizenOne = new Wolfkin2(
+      vec(gridCells(3), gridCells(12)),
+      wolfkinSpriteSheet,
+      'Wolfkin Citizen One',
+      DIRECTIONS.RIGHT
+    );
+
+    return [guardOne, guardTwo, guardThree, citizenOne, kingIronclaw];
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
