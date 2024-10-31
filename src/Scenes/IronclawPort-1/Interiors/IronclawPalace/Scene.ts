@@ -18,6 +18,7 @@ import { WolfkinKing } from '../../../../Actors/NPCs/Citizens/WolfkinKing';
 import { gridCells } from '../../../../utils';
 import { Guard } from '../../../../Actors/NPCs/Guard';
 import { Wolfkin2 } from '../../../../Actors/NPCs/Citizens/Wolfkin2';
+import { Iados } from '../../../../Actors/Main/Iados';
 
 class Palace extends Scene {
   game_container!: HTMLElement;
@@ -46,6 +47,7 @@ class Palace extends Scene {
       engine.add(character);
     });
 
+    // engine.currentScene.camera.strategy.lockToActor(npcs[5]);
     PalaceInteriorResources.TiledMap.addToScene(engine.currentScene);
   }
 
@@ -81,6 +83,13 @@ class Palace extends Scene {
       vec(gridCells(10), gridCells(5)),
       PalaceInteriorResources.KingSpriteSheetPng,
       'King Ironclaw'
+    );
+
+    // Zephyrius drinking in the Thirsty Pelikan
+    const iados = new Iados(
+      vec(gridCells(18), gridCells(9)),
+      PalaceInteriorResources.IadosSpriteSheetPng,
+      DIRECTIONS.LEFT
     );
 
     // add NPCs
@@ -121,7 +130,7 @@ class Palace extends Scene {
       DIRECTIONS.RIGHT
     );
 
-    return [guardOne, guardTwo, guardThree, citizenOne, kingIronclaw];
+    return [guardOne, guardTwo, guardThree, citizenOne, kingIronclaw, iados];
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {

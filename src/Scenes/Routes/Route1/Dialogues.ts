@@ -25,11 +25,6 @@ export const Route1Dialogues = [
     isCharacter: true,
   },
   {
-    actor: 'Chieftan Valour',
-    text: 'You found 20g!',
-    isCharacter: true,
-  },
-  {
     actor: 'hiddenItem',
     text: 'You found 20g!',
   },

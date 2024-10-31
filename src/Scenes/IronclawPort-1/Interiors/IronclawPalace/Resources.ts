@@ -18,6 +18,7 @@ import talkingSound from '../../../../../Resources/Sounds/Effects/bounce-dur2Sho
 import heroPath from '../../../../../Resources/Sheets/Characters/Main/Player/Character006.png?url';
 import heroRunningPath from '../../../../../Resources/Sheets/Characters/Main/Player/Chara006.png?url';
 import kingPath from '../../../../../Resources/Sheets/Characters/Wolfkin/beast_hero_1.png?url';
+import iadosPath from '../../../../../Resources/Sheets/Characters/Main/Iados/Character159.png?url';
 import wolfkinPath from '../../../../../Resources/Sheets/Characters/Wolfkin/beast_tribe_1.png?url';
 import clBuildingsSetPath from '../../../../../Resources/Sheets/Locations/CL_Buildings.png?url';
 import cltBuildingsSetPath from '../../../../../Resources/Sheets/Locations/CLT_Buildings.png?url';
@@ -38,6 +39,7 @@ export const PalaceInteriorResources = {
     ImageFiltering.Pixel
   ),
   KingSpriteSheetPng: new ImageSource(kingPath, false, ImageFiltering.Pixel),
+  IadosSpriteSheetPng: new ImageSource(iadosPath, false, ImageFiltering.Pixel),
   WolfkinSpriteSheetPng: new ImageSource(
     wolfkinPath,
     false,

@@ -1,5 +1,10 @@
 export const PalaceInteriorDialogues = [
   {
+    actor: 'Iados',
+    text: `I am but a lowly slave. You needn't talk to me.`,
+    isCharacter: true,
+  },
+  {
     actor: 'Wolfkin Citizen One',
     text: `I'm so glad King Ironclaw built this city!`,
     isCharacter: true,

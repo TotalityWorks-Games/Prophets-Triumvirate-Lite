@@ -14,5 +14,5 @@ const game = new Engine({
 
 game.start().then(() => {
   uiManager.init();
-  game.goToScene('ironClawPortThirstyPelikan');
+  game.goToScene('ironClawPlaceInterior');
 });
