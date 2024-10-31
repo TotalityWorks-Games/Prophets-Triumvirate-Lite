@@ -3,19 +3,21 @@ import { musicManager } from '../Managers/MusicManager';
 import { LOCATIONS } from '../constants';
 
 // import scenes and loaders
+// import Ironclaw Scenes
 import {
   ironClawPortScene,
   ironClawPortSceneLoader,
 } from './IronclawPort-1/Scene';
 import {
-  templeInteriorScene,
-  templeInteriorSceneLoader,
+  templeInteriorScene as ironclawTermpleInterior,
+  templeInteriorSceneLoader as ironclawTempleInteriorLoader,
 } from './IronclawPort-1/Interiors/TempleOfBekna/Scene';
-import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
 import {
   palaceInteriorScene,
   palaceInteriorSceneLoader,
 } from './IronclawPort-1/Interiors/IronclawPalace/Scene';
+// import Swamby scenes
+import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
 
 export const allScenes = {
   // Ironclaw Scenes:
@@ -24,8 +26,8 @@ export const allScenes = {
     loader: ironClawPortSceneLoader,
   },
   ironClawPortTempleInterior: {
-    scene: templeInteriorScene,
-    loader: templeInteriorSceneLoader,
+    scene: ironclawTermpleInterior,
+    loader: ironclawTempleInteriorLoader,
   },
   ironClawPlaceInterior: {
     scene: palaceInteriorScene,

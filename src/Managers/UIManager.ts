@@ -127,7 +127,6 @@ class UIManager {
     } else if (current.value === MENU.BACK_MAIN_MENU) {
       this.current_menu_item = 0;
       this.cancel_menu();
-      // gameManager.go_to(MAPS.MAIN_MENU);
       return;
     }
 

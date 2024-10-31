@@ -10,7 +10,6 @@ import {
 } from 'excalibur';
 import { MainGuy } from '../../../../Actors/Main/Player';
 import { PalaceInteriorResources } from './Resources';
-import { Wolfkin1 } from '../../../../Actors/NPCs/Citizens/Wolfkin1';
 import { DIRECTIONS, LOCATIONS, SCENE_STATE } from '../../../../constants';
 import { uiManager } from '../../../../Managers/UIManager';
 import { PalaceInteriorDialogues } from './Dialogues';

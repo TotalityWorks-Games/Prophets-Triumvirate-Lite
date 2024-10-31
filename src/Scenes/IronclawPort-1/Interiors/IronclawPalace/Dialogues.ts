@@ -2,22 +2,27 @@ export const PalaceInteriorDialogues = [
   {
     actor: 'Wolfkin Citizen One',
     text: `I'm so glad King Ironclaw built this city!`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Guard One',
     text: `Approach the king with care. I'm watching you.`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Guard Two',
     text: `Do not disturb my watch!`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Guard Three',
     text: `That other guard is always so serious...`,
+    isCharacter: true,
   },
   {
     actor: 'King Ironclaw',
     text: 'My kingdom is in danger! Help me!',
+    isCharacter: true,
   },
   {
     actor: 'treasure1',

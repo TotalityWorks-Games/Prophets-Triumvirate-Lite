@@ -2,34 +2,42 @@ export const TempleInteriorDialogues = [
   {
     actor: 'Wolfkin Cleric One',
     text: `Please leave the clerics be. They are doing important work.`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Cleric Two',
     text: `The stairs are for the priests only.`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Cleric Three',
     text: '...',
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Cleric Four',
     text: '...',
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Cleric Five',
     text: '... accept from us ... Mighty Bekna...',
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Citizen One',
     text: `I was unclean, but the holy water made me clean!`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Citizen Two',
     text: `Please don't interrupt my sacrifice.`,
+    isCharacter: true,
   },
   {
     actor: 'Wolfkin Child One',
     text: 'The holy lights are so pretty...',
+    isCharacter: true,
   },
   {
     actor: 'holyLights',

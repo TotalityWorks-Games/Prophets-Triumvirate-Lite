@@ -34,7 +34,7 @@ export class WolfkinBoy extends Citizen {
     const downIdle = new Animation({
       frames: [
         {
-          graphic: this.spriteSheet.getSprite(7, 4), // downIdle is 1,0
+          graphic: this.spriteSheet.getSprite(7, 4), // downIdle is 7,4
           duration: 150,
         },
       ],

@@ -8,10 +8,10 @@ import {
   SpriteSheet,
   Vector,
 } from 'excalibur';
-import { Direction } from '../../constants';
+import { DIRECTIONS } from '../../constants';
 
 export class Moon extends Actor {
-  direction: Direction;
+  direction: DIRECTIONS;
   resources: ImageSource;
   idol: boolean | undefined;
   constructor(pos: Vector, resources: ImageSource, idol?: boolean) {
@@ -24,7 +24,7 @@ export class Moon extends Actor {
 
     this.z = 100;
     this.scale = new Vector(1.5, 1.5);
-    this.direction = 'down';
+    this.direction = DIRECTIONS.DOWN;
     this.resources = resources;
     this.name = 'Moon';
     this.idol = idol;
