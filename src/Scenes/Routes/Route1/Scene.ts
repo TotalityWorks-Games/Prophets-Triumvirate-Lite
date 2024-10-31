@@ -104,7 +104,7 @@ class Swamby extends Scene {
     });
 
     const citizenOne = new Wolfkin1(
-      vec(gridCells(3), gridCells(3)),
+      vec(gridCells(5), gridCells(3)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen One',
       DIRECTIONS.RIGHT
