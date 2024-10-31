@@ -47,7 +47,7 @@ class Swamby extends Scene {
     );
     engine.currentScene.add(player);
     engine.currentScene.camera.zoom = 0.8;
-    musicManager.startMusic(SwambyResources);
+    // musicManager.startMusic(SwambyResources);
 
     // add all npcs to game
     npcs.forEach((character) => {
@@ -60,8 +60,8 @@ class Swamby extends Scene {
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
-    if (musicManager.location !== LOCATIONS.IRONCLAW_PORT) {
-      musicManager.updateLocation(LOCATIONS.IRONCLAW_PORT);
+    if (musicManager.location !== LOCATIONS.SWAMBY) {
+      musicManager.updateLocation(LOCATIONS.SWAMBY);
       musicManager.startMusic(SwambyResources);
     }
   }
@@ -118,17 +118,17 @@ class Swamby extends Scene {
     );
 
     const citizenThree = new Wolfkin1(
-      vec(gridCells(19), gridCells(12)),
+      vec(gridCells(17), gridCells(10)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen Three',
-      DIRECTIONS.LEFT
+      DIRECTIONS.RIGHT
     );
 
     const citizenFour = new Wolfkin1(
-      vec(gridCells(19), gridCells(3)),
+      vec(gridCells(17), gridCells(3)),
       wolfkinSpriteSheet,
       'Wolfkin Citizen Four',
-      DIRECTIONS.UP
+      DIRECTIONS.RIGHT
     );
 
     const warriorOne = new Guard(

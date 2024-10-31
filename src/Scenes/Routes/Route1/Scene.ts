@@ -22,7 +22,6 @@ import { musicManager } from '../../../Managers/MusicManager';
 // import Actors
 import { MainGuy } from '../../../Actors/Main/Player';
 import { Wolfkin1 } from '../../../Actors/NPCs/Citizens/Wolfkin1';
-import { WolfkinKing } from '../../../Actors/NPCs/Citizens/WolfkinKing';
 import { Wolfkin2 } from '../../../Actors/NPCs/Citizens/Wolfkin2';
 import { Guard } from '../../../Actors/NPCs/Guard';
 
@@ -138,21 +137,7 @@ class Swamby extends Scene {
       DIRECTIONS.DOWN
     );
 
-    const chieftanValour = new WolfkinKing(
-      vec(gridCells(12), gridCells(14)),
-      route1Resources.KingSpriteSheetPng,
-      'Chieftan Valour',
-      DIRECTIONS.LEFT
-    );
-
-    return [
-      citizenOne,
-      citizenTwo,
-      citizenThree,
-      citizenFour,
-      warriorOne,
-      chieftanValour,
-    ];
+    return [citizenOne, citizenTwo, citizenThree, citizenFour, warriorOne];
   }
 }
 

@@ -1,5 +1,35 @@
 export const Route1Dialogues = [
   {
+    actor: 'Wolfkin Citizen One',
+    text: 'You found 20g!',
+    isCharacter: true,
+  },
+  {
+    actor: 'Wolfkin Citizen Two',
+    text: 'You found 20g!',
+    isCharacter: true,
+  },
+  {
+    actor: 'Wolfkin Citizen Three',
+    text: 'You found 20g!',
+    isCharacter: true,
+  },
+  {
+    actor: 'Wolfkin Citizen Four',
+    text: 'You found 20g!',
+    isCharacter: true,
+  },
+  {
+    actor: 'Wolfkin Warrior One',
+    text: 'You found 20g!',
+    isCharacter: true,
+  },
+  {
+    actor: 'Chieftan Valour',
+    text: 'You found 20g!',
+    isCharacter: true,
+  },
+  {
     actor: 'hiddenItem',
     text: 'You found 20g!',
   },
