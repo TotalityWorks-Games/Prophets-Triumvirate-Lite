@@ -67,11 +67,7 @@ class IronClawPort extends Scene {
 
   onDeactivate(_context: SceneActivationContext): void {}
 
-  onPreUpdate(engine: Engine, _delta: number): void {
-    if (engine.input.keyboard.isHeld(Keys.ShiftRight)) {
-      engine.goToScene('ironClawPortSmallHouseInterior1');
-    }
-
+  onPreUpdate(_engine: Engine, _delta: number): void {
     if (this.game_container.className === SCENE_STATE.TALKING) {
       uiManager.displayDialogue(IronclawPortDialogues);
     }

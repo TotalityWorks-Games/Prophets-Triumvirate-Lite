@@ -30,8 +30,17 @@ import {
   ironclawThirstyPelikanSceneLoader,
   thirstyPelikanInteriorScene as ironclawPelikan,
 } from './IronclawPort-1/Interiors/ThirstyPelikan/Scene';
+import { route1Scene, route1SceneLoader } from './Routes/Route1/Scene';
 
 export const allScenes = {
+  // Route Scenes:
+  route1: {
+    scene: route1Scene,
+    loader: route1SceneLoader,
+  },
+  /*
+  ALL CITY SCENES WITH INTERIORS
+  */
   // Ironclaw Scenes:
   start: {
     scene: ironClawPortScene,
@@ -65,6 +74,8 @@ export const allScenes = {
 };
 
 export enum SceneNames {
+  // Route Scenes
+  ROUTE1 = 'route1',
   // Ironclaw Scenes
   START = 'start',
   IRONCLAW_PORT_THIRSTY_PELIKAN = 'ironClawPortThirstyPelikan',
@@ -80,6 +91,13 @@ export enum SceneNames {
 export const handleSceneExit = (engine: Engine, scene: SceneNames) => {
   console.log(scene);
   switch (scene) {
+    // ROUTES START
+    case SceneNames.ROUTE1:
+      if (musicManager.location !== LOCATIONS.ROUTES) {
+        musicManager.stopMusic();
+      }
+      engine.goToScene(scene);
+      break;
     // IRONCLAW SCENES START
     case SceneNames.START:
       if (musicManager.location !== LOCATIONS.IRONCLAW_PORT) {

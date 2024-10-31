@@ -1,31 +1,30 @@
 import {
   BoundingBox,
+  DefaultLoader,
   Engine,
   ImageSource,
-  Keys,
-  Loader,
   Scene,
   SceneActivationContext,
   SpriteSheet,
   vec,
 } from 'excalibur';
-import { gridCells } from '../../utils';
-import { DIRECTIONS, LOCATIONS, SCENE_STATE } from '../../constants';
+import { gridCells } from '../../../utils';
+import { DIRECTIONS, LOCATIONS, SCENE_STATE } from '../../../constants';
 
 // import scene specific items
-import { SwambyResources } from './Resources';
-import { SwambyDialogues } from './Dialogues';
+import { route1Resources } from './Resources';
+import { Route1Dialogues } from './Dialogues';
 
 // import managers
-import { uiManager } from '../../Managers/UIManager';
-import { musicManager } from '../../Managers/MusicManager';
+import { uiManager } from '../../../Managers/UIManager';
+import { musicManager } from '../../../Managers/MusicManager';
 
 // import Actors
-import { MainGuy } from '../../Actors/Main/Player';
-import { Wolfkin1 } from '../../Actors/NPCs/Citizens/Wolfkin1';
-import { WolfkinKing } from '../../Actors/NPCs/Citizens/WolfkinKing';
-import { Wolfkin2 } from '../../Actors/NPCs/Citizens/Wolfkin2';
-import { Guard } from '../../Actors/NPCs/Guard';
+import { MainGuy } from '../../../Actors/Main/Player';
+import { Wolfkin1 } from '../../../Actors/NPCs/Citizens/Wolfkin1';
+import { WolfkinKing } from '../../../Actors/NPCs/Citizens/WolfkinKing';
+import { Wolfkin2 } from '../../../Actors/NPCs/Citizens/Wolfkin2';
+import { Guard } from '../../../Actors/NPCs/Guard';
 
 class Swamby extends Scene {
   game_container!: HTMLElement;
@@ -42,13 +41,13 @@ class Swamby extends Scene {
     // add player character
     /* Default Player Location: pos: vec(2300, 2550), */
     const player = new MainGuy(
-      vec(gridCells(10), gridCells(17)),
-      SwambyResources,
+      vec(gridCells(10), gridCells(58)),
+      route1Resources,
       DIRECTIONS.UP
     );
     engine.currentScene.add(player);
     engine.currentScene.camera.zoom = 0.8;
-    musicManager.startMusic(SwambyResources);
+    musicManager.startMusic(route1Resources);
 
     // add all npcs to game
     npcs.forEach((character) => {
@@ -57,13 +56,13 @@ class Swamby extends Scene {
 
     // engine.currentScene.camera.strategy.lockToActor(npcs[3]);
     engine.currentScene.camera.strategy.lockToActor(player);
-    SwambyResources.TiledMap.addToScene(engine.currentScene);
+    route1Resources.TiledMap.addToScene(engine.currentScene);
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
-    if (musicManager.location !== LOCATIONS.IRONCLAW_PORT) {
-      musicManager.updateLocation(LOCATIONS.IRONCLAW_PORT);
-      musicManager.startMusic(SwambyResources);
+    if (musicManager.location !== LOCATIONS.ROUTES) {
+      musicManager.updateLocation(LOCATIONS.ROUTES);
+      musicManager.startMusic(route1Resources);
     }
   }
 
@@ -71,7 +70,7 @@ class Swamby extends Scene {
 
   onPreUpdate(_engine: Engine, _delta: number): void {
     if (this.game_container.className === SCENE_STATE.TALKING) {
-      uiManager.displayDialogue(SwambyDialogues);
+      uiManager.displayDialogue(Route1Dialogues);
     }
 
     if (this.game_container.className !== SCENE_STATE.TALKING) {
@@ -81,9 +80,9 @@ class Swamby extends Scene {
 
   private setCameraBoundaries(engine: Engine) {
     // add map boundaries for camera
-    const tilemap = SwambyResources.TiledMap.getTileLayers()[0].tilemap;
-    const tileWidth = SwambyResources.TiledMap.getTileLayers()[0].width;
-    const tileHeight = SwambyResources.TiledMap.getTileLayers()[0].height;
+    const tilemap = route1Resources.TiledMap.getTileLayers()[0].tilemap;
+    const tileWidth = route1Resources.TiledMap.getTileLayers()[0].width;
+    const tileHeight = route1Resources.TiledMap.getTileLayers()[0].height;
 
     const mapBounds = new BoundingBox({
       left: tilemap.pos.x,
@@ -96,7 +95,7 @@ class Swamby extends Scene {
 
   private setupNPCs() {
     const wolfkinSpriteSheet = SpriteSheet.fromImageSource({
-      image: SwambyResources.WolfkinSpriteSheetPng as ImageSource,
+      image: route1Resources.WolfkinSpriteSheetPng as ImageSource,
       grid: {
         spriteWidth: 26,
         spriteHeight: 36,
@@ -141,7 +140,7 @@ class Swamby extends Scene {
 
     const chieftanValour = new WolfkinKing(
       vec(gridCells(12), gridCells(14)),
-      SwambyResources.KingSpriteSheetPng,
+      route1Resources.KingSpriteSheetPng,
       'Chieftan Valour',
       DIRECTIONS.LEFT
     );
@@ -157,10 +156,10 @@ class Swamby extends Scene {
   }
 }
 
-export const swambyScene = new Swamby();
+export const route1Scene = new Swamby();
 
 // loader
-export const swambySceneLoader = new Loader();
-for (let resource of Object.values(SwambyResources)) {
-  swambySceneLoader.addResource(resource);
+export const route1SceneLoader = new DefaultLoader();
+for (let resource of Object.values(route1Resources)) {
+  route1SceneLoader.addResource(resource);
 }

@@ -9,7 +9,7 @@ export enum LOCATIONS {
   IRONCLAW_PORT = 'IRONCLAW_PORT',
   SWAMBY = 'SWAMBY',
   // routes:
-  ROUTE1 = 'ROUTE1',
+  ROUTES = 'ROUTES',
 }
 export enum DIRECTIONS {
   UP = 'up',
