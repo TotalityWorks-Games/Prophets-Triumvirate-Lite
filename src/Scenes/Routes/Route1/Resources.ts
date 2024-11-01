@@ -5,9 +5,9 @@ import { ImageSource, ImageFiltering, Sound, Resource } from 'excalibur';
 import route1 from '../../../../Resources/TMX/Route1.tmx?url';
 
 // import music
-import swambyMP3 from '../../../../Resources/Sounds/Music/OST 2 - Golden Horizon (Loopable).mp3';
-import swambyOgg from '../../../../Resources/Sounds/Music/OST 2 - Golden Horizon (Loopable).ogg';
-import swambyWav from '../../../../Resources/Sounds/Music/OST 2 - Golden Horizon (Loopable).wav';
+import routeMP3 from '../../../../Resources/Sounds/Music/OST 5 - Descent into Darkness (Loopable).mp3';
+import routeOgg from '../../../../Resources/Sounds/Music/OST 5 - Descent into Darkness (Loopable).ogg';
+import routeWav from '../../../../Resources/Sounds/Music/OST 5 - Descent into Darkness (Loopable).wav';
 
 // import sounds
 import collisionSound from '../../../../Resources/Sounds/Effects/bump-dur2Short-pitch1Low.wav';
@@ -44,7 +44,7 @@ export const route1Resources = {
     ImageFiltering.Pixel
   ),
   KingSpriteSheetPng: new ImageSource(kingPath, false, ImageFiltering.Pixel),
-  Music: new Sound(swambyMP3, swambyWav, swambyOgg),
+  Music: new Sound(routeMP3, routeWav, routeOgg),
   CollisionSound: new Sound(collisionSound),
   WalkingSound: new Sound(walkingSound),
   TalkingSound: new Sound(talkingSound),
