@@ -1,5 +1,7 @@
 // enums
 export enum LOCATIONS {
+  // Menu
+  MAINMENU = 'MAINMENU',
   // common interiors
   THIRSTY_PELIKAN = 'THIRSTY_PELIKAN',
   SHOP = 'SHOP',
@@ -10,6 +12,21 @@ export enum LOCATIONS {
   SWAMBY = 'SWAMBY',
   // routes:
   ROUTES = 'ROUTES',
+}
+export enum SCENE_NAMES {
+  // Route Scenes
+  ROUTE1 = 'route1',
+  // Ironclaw Scenes
+  START = 'start',
+  IRONCLAW_EXTERIOR = 'ironClawExterior',
+  IRONCLAW_PORT_THIRSTY_PELIKAN = 'ironClawPortThirstyPelikan',
+  IRONCLAW_PORT_TEMPLE_INTERIOR = 'ironClawPortTempleInterior',
+  IRONCLAW_PORT_SHOP_INTERIOR = 'ironClawPortShopInterior',
+  // IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1 = 'ironClawPortSmallHouseInterior1',
+  IRONCLAW_PORT_SMALL_HOUSE_INTERIOR2 = 'ironClawPortSmallHouseInterior2',
+  IRONCLAW_PORT_PALACE_INTERIOR = 'ironClawPlaceInterior',
+  // Swamby Scenes
+  SWAMBY = 'swamby',
 }
 export enum DIRECTIONS {
   UP = 'up',

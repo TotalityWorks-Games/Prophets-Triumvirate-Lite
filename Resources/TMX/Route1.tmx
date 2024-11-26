@@ -53,7 +53,7 @@
   <object id="1" name="swamby" x="179.649" y="23.5789" width="85.3333" height="74.1053"/>
   <object id="2" name="route2" x="463.719" y="1323.79" width="23.5789" height="249.263"/>
   <object id="3" name="route3" x="-12.3509" y="1192.42" width="30.3158" height="175.158"/>
-  <object id="4" name="start" x="55.0175" y="1896.42" width="372.772" height="34.807"/>
+  <object id="4" name="ironClawExterior" x="55.0175" y="1896.42" width="372.772" height="34.807"/>
   <object id="5" name="hiddenItem" x="106.667" y="1658.39" width="57.2632" height="68.4912"/>
  </objectgroup>
 </map>

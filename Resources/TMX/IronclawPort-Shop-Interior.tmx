@@ -26,7 +26,7 @@
   </data>
  </layer>
  <objectgroup id="4" name="Objects" visible="0" locked="1">
-  <object id="1" name="start" x="129.123" y="302.035" width="63.2515" height="17.9649"/>
+  <object id="1" name="ironClawExterior" x="129.123" y="302.035" width="63.2515" height="17.9649"/>
   <object id="2" name="sell" x="65.1228" y="162.807" width="31.0643" height="59.5088"/>
   <object id="3" name="buy" x="225.31" y="162.807" width="29.9415" height="59.883"/>
  </objectgroup>

@@ -42,7 +42,7 @@
   </data>
  </layer>
  <objectgroup id="6" name="Objects" locked="1">
-  <object id="1" name="start" x="290.433" y="625.029" width="58.386" height="13.4737"/>
+  <object id="1" name="ironClawExterior" x="290.433" y="625.029" width="58.386" height="13.4737"/>
   <object id="2" name="treasure1" x="228.304" y="208.842" width="56.1404" height="28.4444"/>
   <object id="3" name="treasure2" x="357.801" y="211.088" width="55.3918" height="29.193"/>
   <object id="4" name="treasure3" x="36.6784" y="428.164" width="47.9064" height="29.9415"/>

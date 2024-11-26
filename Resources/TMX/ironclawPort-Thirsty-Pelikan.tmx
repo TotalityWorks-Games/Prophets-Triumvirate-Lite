@@ -58,6 +58,6 @@
   <object id="16" name="food3" x="511.278" y="317.293" width="32.3308" height="40.6015"/>
   <object id="17" name="food4" x="512.03" y="445.865" width="30.0752" height="32.3308"/>
   <object id="18" name="thistyPelikanRentedRooms" x="555.639" y="26.3158" width="39.8496" height="40.6015"/>
-  <object id="20" name="start" x="291.729" y="621.053" width="60.1504" height="18.797"/>
+  <object id="20" name="ironClawExterior" x="291.729" y="621.053" width="60.1504" height="18.797"/>
  </objectgroup>
 </map>

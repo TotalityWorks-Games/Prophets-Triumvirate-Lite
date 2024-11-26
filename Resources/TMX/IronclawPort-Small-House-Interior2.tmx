@@ -46,7 +46,7 @@
   </data>
  </layer>
  <objectgroup id="7" name="Objects" locked="1">
-  <object id="1" name="start" x="130" y="310" width="60.6667" height="10"/>
+  <object id="1" name="ironClawExterior" x="130" y="310" width="60.6667" height="10"/>
   <object id="2" name="boringBooks" x="126.667" y="34.6667" width="65.3333" height="94.6667"/>
   <object id="4" name="hiddenItem" x="195.333" y="72" width="32.6667" height="61.3333"/>
  </objectgroup>

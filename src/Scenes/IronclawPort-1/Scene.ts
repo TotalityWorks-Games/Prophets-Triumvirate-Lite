@@ -1,5 +1,6 @@
 import {
   BoundingBox,
+  DefaultLoader,
   Engine,
   ImageSource,
   Scene,
@@ -24,7 +25,6 @@ import { Delsaran } from '../../Actors/Main/Delsaran';
 import { Guard } from '../../Actors/NPCs/Guard';
 import { Wolfkin1 } from '../../Actors/NPCs/Citizens/Wolfkin1';
 import { Wolfkin2 } from '../../Actors/NPCs/Citizens/Wolfkin2';
-import { StartLoader } from '../../Loaders/startLoader';
 
 class IronClawPort extends Scene {
   game_container!: HTMLElement;
@@ -46,7 +46,6 @@ class IronClawPort extends Scene {
     );
     engine.currentScene.add(player);
     engine.currentScene.camera.zoom = 0.8;
-    musicManager.startMusic(IronclawPortResources);
 
     // add all npcs to game
     npcs.forEach((character) => {
@@ -184,7 +183,7 @@ class IronClawPort extends Scene {
 export const ironClawPortScene = new IronClawPort();
 
 // loader
-export const ironClawPortSceneLoader = new StartLoader();
+export const ironClawPortSceneLoader = new DefaultLoader();
 for (let resource of Object.values(IronclawPortResources)) {
   ironClawPortSceneLoader.addResource(resource);
 }

@@ -40,7 +40,7 @@
   </data>
  </layer>
  <objectgroup id="9" name="Objects" visible="0" locked="1">
-  <object id="4" name="start" x="286.69" y="633.263" width="62.1287" height="5.9883">
+  <object id="4" name="ironClawExterior" x="286.69" y="633.263" width="62.1287" height="5.9883">
    <properties>
     <property name="leave" type="bool" value="true"/>
    </properties>

@@ -33,6 +33,6 @@
   </data>
  </layer>
   <objectgroup id="7" name="Objects">
-  <object id="1" name="start" x="130" y="310" width="60.6667" height="10"/>
+  <object id="1" name="ironClawExterior" x="130" y="310" width="60.6667" height="10"/>
  </objectgroup>
 </map>
