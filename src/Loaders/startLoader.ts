@@ -12,7 +12,7 @@ export class StartLoader extends DefaultLoader {
   fadeProgressBar: boolean = false;
   progressBarOpacity: number = 1.0;
   public backgroundColor: string = 'red';
-  public loadingBarColor: Color = Color.fromHex('#FFFFFFFF');
+  public loadingBarColor: Color = Color.fromHex('#D9E3E0');
   public screen: Screen | undefined = undefined;
   private static _DEFAULT_LOADER_OPTIONS: LoaderOptions = {
     loadables: [],
@@ -25,7 +25,6 @@ export class StartLoader extends DefaultLoader {
   _gameTitleDiv: HTMLDivElement;
   _gameAttributeDiv: HTMLDivElement;
   _gameRootDiv: HTMLDivElement = document.createElement('div');
-  _instructionsDiv: HTMLDivElement;
 
   constructor(_loadables?: Loadable<any>[]) {
     super(StartLoader._DEFAULT_LOADER_OPTIONS);
@@ -34,10 +33,12 @@ export class StartLoader extends DefaultLoader {
     this._playbutton = this._createPlayButton();
     this._gameTitleDiv = this._createGameTitle();
     this._gameAttributeDiv = this._createExcaliburAttribute();
-    this._instructionsDiv = this._createInstructions();
-    this._gameRootDiv.style.backgroundImage =
-      'url(./Resources/Backgrounds/background_Town1.png)';
-    this._gameRootDiv.style.backgroundRepeat = 'no-repeat';
+    this._gameRootDiv.style.background = `linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),url(./Resources/Backgrounds/background_Town3.png) no-repeat,
+    url(./Resources/Backgrounds/background_Town2.png) no-repeat,
+      url(./Resources/Backgrounds/background_Town1.png) no-repeat`;
     this._gameRootDiv.style.backgroundSize = 'cover';
     this._gameRootDiv.style.zIndex = '100';
   }
@@ -119,12 +120,6 @@ export class StartLoader extends DefaultLoader {
         this.loadingBarColor
       );
       this.progressBarOpacity -= 0.01;
-
-      if (this.progressBarOpacity <= 0) {
-        setTimeout(() => {
-          this._showInstructions();
-        }, 500);
-      }
     }
   }
 
@@ -142,44 +137,6 @@ export class StartLoader extends DefaultLoader {
   //***********************  */
   // These are the methods that create the DOM elements
   //***********************  */
-
-  _showInstructions() {
-    this._gameRootDiv.appendChild(this._instructionsDiv);
-  }
-
-  _createInstructions(): HTMLDivElement {
-    const instructions = document.createElement('div');
-    instructions.id = 'excalibur-instructions';
-    instructions.style.position = 'absolute';
-    instructions.style.width = '600px';
-    instructions.style.height = '50px';
-    instructions.style.bottom = '5px';
-    instructions.style.left = '50%';
-    instructions.style.textAlign = 'center';
-    instructions.style.transform = 'translateX(-50%)';
-    instructions.style.display = 'block';
-    instructions.style.fontFamily = 'Pixelify Sans';
-    instructions.style.fontSize = '15px';
-    instructions.style.color = '#FFFFFF';
-    instructions.style.zIndex = '1001';
-
-    const instructionStrings: string[] = [
-      'USE EITHER YOUR GAMEPAD, KEYBOARD, MOUSE, OR TOUCH TO START',
-      'PRESS START ON GAMEPAD',
-      'PRESS ENTER ON KEYBOARD',
-      'CLICK PLAY BUTTON WITH MOUSE',
-      'TOUCH PLAY BUTTON WITH TOUCHSCREEN',
-    ];
-    let instructionIndex = 0;
-
-    setInterval(() => {
-      //cycle through instrucitonStrings and update innerText
-      instructionIndex = (instructionIndex + 1) % instructionStrings.length;
-      instructions.innerText = instructionStrings[instructionIndex];
-    }, 2500);
-
-    return instructions;
-  }
 
   /**
    * Shows the play button in the center of the screen and waits for it to be clicked.
@@ -217,15 +174,15 @@ export class StartLoader extends DefaultLoader {
     button.style.position = 'absolute';
     button.style.width = '100px';
     button.style.height = '50px';
-    button.style.top = '60%';
-    button.style.left = '50%';
+    button.style.top = '65%';
+    button.style.left = '45%';
 
     button.style.fontFamily = 'Pixelify Sans';
 
     button.style.display = 'none';
     button.style.zIndex = '1000';
     button.innerText = 'PLAY';
-    button.style.border = '2px solid white';
+    button.style.border = '2px solid #D9E3E0';
     button.style.borderRadius = '25px';
 
     return button;
@@ -243,20 +200,18 @@ export class StartLoader extends DefaultLoader {
     const title = document.createElement('div');
     title.style.position = 'absolute';
 
-    title.style.width = '500px';
+    title.style.width = '1000px';
     title.style.height = '100px';
-    title.style.top = '35%';
+    title.style.top = '40%';
     title.style.left = '50%';
     title.style.textAlign = 'center';
     title.style.transform = 'translate(-50%, -50%)';
     title.style.display = 'block';
     title.style.fontFamily = 'Pixelify Sans';
-    title.style.fontSize = '40px';
+    title.style.fontSize = '65px';
     title.style.zIndex = '1001';
 
-    title.style.border = '2px solid white';
-    title.style.borderRadius = '25px';
-    title.style.color = 'white';
+    title.style.color = '#D9E3E0';
     this._gameRootDiv.appendChild(title);
 
     const titleflexChild = document.createElement('div');
@@ -297,7 +252,7 @@ export class StartLoader extends DefaultLoader {
     extitle.style.display = 'block';
     extitle.style.fontFamily = 'Pixelify Sans';
     extitle.style.fontSize = '15px';
-    extitle.style.color = '#FFFFFF';
+    extitle.style.color = '#D9E3E0';
     extitle.style.zIndex = '1001';
     extitle.innerText = 'Made with Excalibur.js';
     this._gameRootDiv.appendChild(extitle);
