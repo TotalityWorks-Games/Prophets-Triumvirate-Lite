@@ -2,7 +2,6 @@ import {
   BoundingBox,
   Engine,
   ImageSource,
-  Loader,
   Scene,
   SceneActivationContext,
   SpriteSheet,
