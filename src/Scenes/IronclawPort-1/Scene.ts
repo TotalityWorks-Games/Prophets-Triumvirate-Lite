@@ -25,6 +25,7 @@ import { Delsaran } from '../../Actors/Main/Delsaran';
 import { Guard } from '../../Actors/NPCs/Guard';
 import { Wolfkin1 } from '../../Actors/NPCs/Citizens/Wolfkin1';
 import { Wolfkin2 } from '../../Actors/NPCs/Citizens/Wolfkin2';
+import { StartLoader } from '../../Loaders/startLoader';
 
 class IronClawPort extends Scene {
   game_container!: HTMLElement;
@@ -184,7 +185,7 @@ class IronClawPort extends Scene {
 export const ironClawPortScene = new IronClawPort();
 
 // loader
-export const ironClawPortSceneLoader = new Loader();
+export const ironClawPortSceneLoader = new StartLoader();
 for (let resource of Object.values(IronclawPortResources)) {
   ironClawPortSceneLoader.addResource(resource);
 }

@@ -30,6 +30,7 @@ import {
   ironclawThirstyPelikanSceneLoader,
   thirstyPelikanInteriorScene as ironclawPelikan,
 } from './IronclawPort-1/Interiors/ThirstyPelikan/Scene';
+// import Routes scenes
 import { route1Scene, route1SceneLoader } from './Routes/Route1/Scene';
 
 export const allScenes = {

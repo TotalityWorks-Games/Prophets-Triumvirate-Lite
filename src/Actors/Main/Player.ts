@@ -361,7 +361,7 @@ export class MainGuy extends Actor {
   }
 
   pauseGame(engine: Engine) {
-    if (engine.input.keyboard.wasPressed(Keys.Enter)) {
+    if (engine.input.keyboard.wasPressed(Keys.Esc)) {
       if (this.playerState === SCENE_STATE.MENU) {
         this.playerState = SCENE_STATE.PLAYING;
         uiManager.update_state(SCENE_STATE.PLAYING);
