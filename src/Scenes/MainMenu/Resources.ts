@@ -1,6 +1,9 @@
 import { ImageFiltering, ImageSource, Sound } from 'excalibur';
 
 // import clouds
+import backgroundPath from '../../../Resources/Backgrounds/background2.png?url';
+
+// import clouds
 import cloud1Path from '../../../Resources/Backgrounds/cloud1.png?url';
 import cloud2Path from '../../../Resources/Backgrounds/cloud2.png?url';
 import cloud3Path from '../../../Resources/Backgrounds/cloud3.png?url';
@@ -16,6 +19,7 @@ import themeOgg from '../../../Resources/Sounds/Music/OST 5 - Theme.ogg';
 import themeWav from '../../../Resources/Sounds/Music/OST 5 - Theme.wav';
 
 export const MainMenuResources = {
+  BackgroundPng: new ImageSource(backgroundPath, false, ImageFiltering.Pixel),
   Cloud1Png: new ImageSource(cloud1Path, false, ImageFiltering.Pixel),
   Cloud2Png: new ImageSource(cloud2Path, false, ImageFiltering.Pixel),
   Cloud3Png: new ImageSource(cloud3Path, false, ImageFiltering.Pixel),

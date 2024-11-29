@@ -15,10 +15,10 @@ import {
   vec,
   Vector,
 } from 'excalibur';
-import { DIRECTIONS, SCENE_STATE } from '../../constants';
+import { DIRECTIONS, SCENE_STATE, SCENE_NAMES } from '../../constants';
 import { Config } from '../../config';
 import { uiManager } from '../../Managers/UIManager';
-import { handleSceneExit, SceneNames } from '../../Scenes/allScenes';
+import { handleSceneExit } from '../../Scenes/allScenes';
 
 const circle = new CircleCollider({
   radius: 11,
@@ -87,7 +87,7 @@ export class MainGuy extends Actor {
     _side: Side,
     _contact: CollisionContact
   ): void {
-    handleSceneExit(this.engine!, other.owner.name as SceneNames);
+    handleSceneExit(this.engine!, other.owner.name as SCENE_NAMES);
 
     if (other.owner.name === 'Collisions') {
       if (this.nearToObject === other.owner) {
@@ -362,12 +362,13 @@ export class MainGuy extends Actor {
 
   pauseGame(engine: Engine) {
     if (engine.input.keyboard.wasPressed(Keys.Esc)) {
-      if (this.playerState === SCENE_STATE.MENU) {
+      if (this.playerState === SCENE_STATE.PAUSED) {
+        // TODO: This code actually should be broken. Must investigate.
         this.playerState = SCENE_STATE.PLAYING;
         uiManager.update_state(SCENE_STATE.PLAYING);
       } else {
-        this.playerState = SCENE_STATE.MENU;
-        uiManager.update_state(SCENE_STATE.MENU);
+        this.playerState = SCENE_STATE.PAUSED;
+        uiManager.update_state(SCENE_STATE.PAUSED);
       }
     }
   }

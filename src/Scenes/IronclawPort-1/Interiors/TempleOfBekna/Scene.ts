@@ -164,6 +164,8 @@ class Temple extends Scene {
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
+    uiManager.update_state(SCENE_STATE.PLAYING);
+
     if (musicManager.location !== LOCATIONS.TEMPLE) {
       musicManager.updateLocation(LOCATIONS.TEMPLE);
       musicManager.startMusic(TempleInteriorResources);

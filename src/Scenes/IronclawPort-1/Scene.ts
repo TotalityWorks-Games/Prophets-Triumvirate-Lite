@@ -57,6 +57,8 @@ class IronClawPort extends Scene {
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
+    uiManager.update_state(SCENE_STATE.PLAYING);
+
     if (musicManager.location !== LOCATIONS.IRONCLAW_PORT) {
       musicManager.updateLocation(LOCATIONS.IRONCLAW_PORT);
       musicManager.startMusic(IronclawPortResources);

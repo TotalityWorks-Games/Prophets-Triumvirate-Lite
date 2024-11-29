@@ -59,6 +59,8 @@ class Swamby extends Scene {
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
+    uiManager.update_state(SCENE_STATE.PLAYING);
+
     if (musicManager.location !== LOCATIONS.ROUTES) {
       musicManager.updateLocation(LOCATIONS.ROUTES);
       musicManager.startMusic(route1Resources);

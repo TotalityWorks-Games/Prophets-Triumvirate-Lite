@@ -4,6 +4,7 @@ import {
   Engine,
   ImageSource,
   Scene,
+  SceneActivationContext,
   SpriteSheet,
   vec,
 } from 'excalibur';
@@ -53,6 +54,10 @@ class SmallHouse2 extends Scene {
     if (this.game_container.className !== SCENE_STATE.TALKING) {
       uiManager.cleanupDialogue();
     }
+  }
+
+  onActivate(_context: SceneActivationContext<unknown>): void {
+    uiManager.update_state(SCENE_STATE.PLAYING);
   }
 
   private setCameraBoundaries(_engine: Engine) {

@@ -7,7 +7,7 @@ export class Cloud extends Actor {
     super({
       name: 'cloud',
       pos,
-      vel: vec(randomInRange(-30, -100), 0),
+      vel: vec(randomInRange(-10, -60), 0),
       width: 100,
       height: 100,
     });
@@ -15,7 +15,7 @@ export class Cloud extends Actor {
   }
   override onInitialize(_engine: ex.Engine): void {
     this.cloudSprite = this.resources.toSprite();
-    this.cloudSprite.scale = vec(3, 3);
+    // this.cloudSprite.scale = vec(3, 3);
     this.graphics.use(this.cloudSprite);
   }
   override onPostUpdate(engine: ex.Engine, _delta: number): void {

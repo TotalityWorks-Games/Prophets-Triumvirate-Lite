@@ -85,7 +85,9 @@ body {
     }
 
 
-
+    .game_title {
+      display: none;
+    }
     .pause_menu {
       display: none;
     }
@@ -202,6 +204,15 @@ body {
 }
 
 #game.SCENE_STATE_MENU {
+  #ui {
+    .game_title {
+      color: red;
+      display: flex;
+    }
+  }
+}
+
+#game.SCENE_STATE_PAUSED {
   #ui {
     display: flex;
     .menu_close{

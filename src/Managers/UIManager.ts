@@ -12,6 +12,7 @@ export enum MENU {
 
 class UIManager {
   game_container!: HTMLElement;
+  game_title!: HTMLElement;
   dialog_container!: HTMLElement;
   pause_menu!: HTMLElement;
   menu_window!: HTMLElement;
@@ -50,12 +51,14 @@ class UIManager {
     this.createPauseMenuUI();
     this.linkUIReferences();
     this.createDialogueUI();
+    this.createGameTitle();
     this.update_menu();
   }
 
   private linkUIReferences() {
     this.game_container = document.getElementById('game')!;
     this.dialog_container = document.getElementById('dialog_container')!;
+    this.game_title = document.getElementById('game_title')!;
     this.pause_menu = document.getElementById('pause_menu')!;
     this.menu_items_container = document.getElementById(
       'menu_items_container'
@@ -96,6 +99,13 @@ class UIManager {
             <div class="text"></div>
         </div>
         `;
+  }
+
+  private createGameTitle() {
+    const game_title = document.getElementById('game_title')!;
+    game_title.innerHTML = `
+    <div class="title_text">THE PROPHETS TRIUMVIRATE</div>
+    `;
   }
 
   close_submenu() {

@@ -60,6 +60,8 @@ class ThirstyPelikan extends Scene {
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
+    uiManager.update_state(SCENE_STATE.PLAYING);
+
     if (musicManager.location !== LOCATIONS.PALACE) {
       musicManager.updateLocation(LOCATIONS.PALACE);
       musicManager.startMusic(ThirstyPelikanInteriorResources);

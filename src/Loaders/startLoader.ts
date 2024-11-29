@@ -7,6 +7,8 @@ import {
   Screen,
   Util,
 } from 'excalibur';
+import { uiManager } from '../Managers/UIManager';
+import { SCENE_STATE } from '../constants';
 
 export class StartLoader extends DefaultLoader {
   fadeProgressBar: boolean = false;
@@ -47,6 +49,8 @@ export class StartLoader extends DefaultLoader {
   //DefaultLoader Overrides
   //***********************  */
   public override onInitialize(engine: Engine): void {
+    uiManager.update_state(SCENE_STATE.LOADING);
+
     this.engine = engine;
     this.screen = engine.screen as Screen;
     this.canvas.width = this.engine.canvas.width;

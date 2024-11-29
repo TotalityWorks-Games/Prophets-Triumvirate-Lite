@@ -1,6 +1,6 @@
 import { Engine } from 'excalibur';
 import { musicManager } from '../Managers/MusicManager';
-import { LOCATIONS, SCENE_NAMES } from '../constants';
+import { LOCATIONS, SCENE_NAMES, SCENE_STATE } from '../constants';
 
 // import scenes and loaders
 // import Ironclaw Scenes
@@ -10,6 +10,7 @@ import { swambyScene, swambySceneLoader } from './Swamby-1/Scene';
 // import Routes scenes
 import { route1Scene, route1SceneLoader } from './Routes/Route1/Scene';
 import { startScreen, startScreenLoader } from './MainMenu/Scene';
+import { uiManager } from '../Managers/UIManager';
 
 export const allScenes = {
   // Main Menu
@@ -36,55 +37,61 @@ export const allScenes = {
 
 export const handleSceneExit = (engine: Engine, scene: SCENE_NAMES) => {
   console.log(scene);
+
+  function switchScenes(scene: SCENE_NAMES) {
+    uiManager.update_state(SCENE_STATE.LOADING);
+    engine.goToScene(scene);
+  }
+
   switch (scene) {
     // Main Menu
     case SCENE_NAMES.START:
       if (musicManager.location !== LOCATIONS.MAINMENU) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     // ROUTES START
     case SCENE_NAMES.ROUTE1:
       if (musicManager.location !== LOCATIONS.ROUTES) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     // IRONCLAW SCENES START
     case SCENE_NAMES.IRONCLAW_EXTERIOR:
       if (musicManager.location !== LOCATIONS.IRONCLAW_PORT) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     case SCENE_NAMES.IRONCLAW_PORT_THIRSTY_PELIKAN:
       if (musicManager.location !== LOCATIONS.THIRSTY_PELIKAN) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     case SCENE_NAMES.IRONCLAW_PORT_SHOP_INTERIOR:
       if (musicManager.location !== LOCATIONS.SHOP) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     case SCENE_NAMES.IRONCLAW_PORT_TEMPLE_INTERIOR:
       if (musicManager.location !== LOCATIONS.TEMPLE) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     case SCENE_NAMES.IRONCLAW_PORT_PALACE_INTERIOR:
       if (musicManager.location !== LOCATIONS.PALACE) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     // case SCENE_NAMES.IRONCLAW_PORT_SMALL_HOUSE_INTERIOR1:
     case SCENE_NAMES.IRONCLAW_PORT_SMALL_HOUSE_INTERIOR2:
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     // IRONCLAW SCENES END
     //
@@ -93,7 +100,7 @@ export const handleSceneExit = (engine: Engine, scene: SCENE_NAMES) => {
       if (musicManager.location !== LOCATIONS.SWAMBY) {
         musicManager.stopMusic();
       }
-      engine.goToScene(scene);
+      switchScenes(scene);
       break;
     // SWAMBY SCENES END
     default:

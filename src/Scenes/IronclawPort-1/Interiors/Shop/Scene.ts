@@ -57,6 +57,8 @@ class ShopInterior extends Scene {
   }
 
   onActivate(_context: SceneActivationContext<unknown>): void {
+    uiManager.update_state(SCENE_STATE.PLAYING);
+
     if (musicManager.location !== LOCATIONS.SHOP) {
       musicManager.updateLocation(LOCATIONS.SHOP);
       musicManager.startMusic(ShopInteriorResources);
